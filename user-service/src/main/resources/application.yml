@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: userservice
+
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8081/eureka/
+
+server:
+  port: 2222
+
+
+
+error:
+  whitelabel:
+    enabled: false

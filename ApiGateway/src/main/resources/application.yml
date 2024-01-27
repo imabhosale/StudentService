@@ -1,0 +1,25 @@
+server:
+  port: 9999
+
+spring:
+  application:
+    name: APIGATEWAY
+  main:
+    web-application-type: reactive
+
+cloud:
+  gateway:
+    routes:
+      - id: PRACTICE-CLIENT-route
+        uri: lb://PRACTICE-CLIENT
+        predicates:
+          - Path=/book/**
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:1111/eureka
